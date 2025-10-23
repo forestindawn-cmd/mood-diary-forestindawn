@@ -3,441 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOOD DIARY - 무료 다운로드</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #bbdefb 0%, #e1bee7 100%);
-            color: #2c3e50;
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: none;
-            color: #2c3e50;
-        }
-
-        .header p {
-            font-size: 1.3rem;
-            opacity: 0.8;
-            margin-bottom: 30px;
-            color: #34495e;
-        }
-
-        .version-badge {
-            background: rgba(255,255,255,0.7);
-            padding: 8px 20px;
-            border-radius: 20px;
-            display: inline-block;
-            font-size: 0.9rem;
-            color: #2c3e50;
-            border: 1px solid rgba(44, 62, 80, 0.1);
-        }
-
-        .content {
-            padding: 50px 40px;
-        }
-
-        .intro {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .intro h2 {
-            color: #2c3e50;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-
-        .intro p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .feature-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid #007bff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .feature-card h3 {
-            color: #2c3e50;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .feature-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .feature-list li {
-            color: #555;
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .feature-list li::before {
-            content: '✓';
-            color: #28a745;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .download-section {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            color: white;
-            padding: 50px;
-            border-radius: 20px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .download-section h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .download-section p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .download-btn {
-            background: white;
-            color: #28a745;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            background: #f8f9fa;
-        }
-
-        .download-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .info-card {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: left;
-        }
-
-        .info-card h4 {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .info-card p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .usage-section {
-            background: #f8f9fa;
-            padding: 40px;
-            border-radius: 15px;
-            margin-bottom: 40px;
-        }
-
-        .usage-section h3 {
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .usage-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-        }
-
-        .step {
-            text-align: center;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-        }
-
-        .step-number {
-            background: #007bff;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin: 0 auto 15px auto;
-        }
-
-        .step h4 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .step p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .footer {
-            background: #2c3e50;
-            color: white;
-            padding: 30px 40px;
-            text-align: center;
-        }
-
-        .footer h4 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .footer p {
-            opacity: 0.8;
-            margin-bottom: 10px;
-        }
-
-        .footer a {
-            color: #64b5f6;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 40px 20px;
-            }
-
-            .header h1 {
-                font-size: 2.2rem;
-            }
-
-            .content {
-                padding: 30px 20px;
-            }
-
-            .download-section {
-                padding: 30px 20px;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>MOOD DIARY - 나만의 감정 기록 도구</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>MOOD DIARY</h1>
-            <p>나만의 감정 기록 도구로 마음 건강을 챙기세요</p>
-            <div class="version-badge">✨ 무료 버전 · made by 새벽숲</div>
+            <div class="header-left">
+                <h1>MOOD DIARY</h1>
+                <button class="help-btn" onclick="showHelpModal()">사용설명서</button>
+            </div>
+            <input type="date" id="dateInput" class="date-input" max="">
         </div>
 
-        <div class="content">
-            <div class="intro">
-                <h2>매일 5분, 내 마음을 돌보는 시간</h2>
-                <p>MOOD DIARY는 당신의 감정과 기분을 쉽고 재미있게 기록할 수 있는 웹 도구입니다. 
-                복잡한 설치 없이 브라우저에서 바로 사용하고, 모든 기록은 안전하게 보관됩니다.</p>
-            </div>
-
-            <div class="features">
-                <div class="feature-card">
-                    <h3>📊 종합적인 기분 기록</h3>
-                    <p>하루의 감정을 다각도로 기록하세요</p>
-                    <ul class="feature-list">
-                        <li>오늘의 날씨와 기분 척도</li>
-                        <li>에너지 레벨 측정</li>
-                        <li>자기관리 체크리스트</li>
-                        <li>자유로운 감정 일기</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>📅 직관적인 달력 뷰</h3>
-                    <p>한 달간의 감정 변화를 한눈에 확인</p>
-                    <ul class="feature-list">
-                        <li>월별 기록 달력으로 보기</li>
-                        <li>날짜별 기분 이모지 표시</li>
-                        <li>클릭 한 번으로 상세 기록 확인</li>
-                        <li>감정 패턴 쉽게 파악</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>📈 월간 리포트 생성</h3>
-                    <p>내 감정 데이터를 분석한 맞춤 리포트</p>
-                    <ul class="feature-list">
-                        <li>월별 기분/에너지 평균 분석</li>
-                        <li>자기관리 실천 현황</li>
-                        <li>베스트 기분의 날 하이라이트</li>
-                        <li>이미지 또는 텍스트로 다운로드</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <h3>🔒 안전한 개인정보 보호</h3>
-                    <p>내 기록은 오직 나만 볼 수 있어요</p>
-                    <ul class="feature-list">
-                        <li>모든 데이터 로컬 저장</li>
-                        <li>인터넷 없이도 사용 가능</li>
-                        <li>별도 회원가입 불필요</li>
-                        <li>개인정보 외부 전송 없음</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="download-section">
-                <h3>🚀 지금 바로 시작하세요!</h3>
-                <p>설치가 필요 없는 웹 버전으로 언제 어디서나 사용할 수 있어요</p>
-                
-                <a href="#" class="download-btn" onclick="downloadMoodDiary()">
-                    💾 MOOD DIARY 다운로드
-                </a>
-
-                <div class="download-info">
-                    <div class="info-card">
-                        <h4>📱 사용 환경</h4>
-                        <p>PC, 모바일, 태블릿 모든 기기에서 사용 가능<br>
-                        최신 브라우저 권장 (Chrome, Safari, Firefox)</p>
-                    </div>
-                    <div class="info-card">
-                        <h4>💾 파일 정보</h4>
-                        <p>HTML 파일 1개 (약 50KB)<br>
-                        다운로드 후 브라우저로 열어서 사용</p>
-                    </div>
-                    <div class="info-card">
-                        <h4>🔄 업데이트</h4>
-                        <p>새로운 기능이 추가되면 블로그에서 공지<br>
-                        기존 데이터는 그대로 유지</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="usage-section">
-                <h3>📖 사용법</h3>
-                <div class="usage-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h4>다운로드</h4>
-                        <p>위의 다운로드 버튼을 클릭하여 HTML 파일을 받으세요</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h4>실행</h4>
-                        <p>다운로드한 파일을 브라우저로 열어주세요</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h4>기록</h4>
-                        <p>날씨, 기분, 에너지, 자기관리를 선택하고 일기를 써보세요</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <h4>분석</h4>
-                        <p>달력에서 기록을 확인하고 월간 리포트를 받아보세요</p>
-                    </div>
-                </div>
+        <div class="section">
+            <div class="section-title">🌤️ 오늘의 날씨</div>
+            <div class="weather-grid">
+                <div class="weather-item" data-weather="sunny" onclick="selectWeather(this)">☀️</div>
+                <div class="weather-item" data-weather="cloudy" onclick="selectWeather(this)">☁️</div>
+                <div class="weather-item" data-weather="overcast" onclick="selectWeather(this)">⛅</div>
+                <div class="weather-item" data-weather="rainy" onclick="selectWeather(this)">🌧️</div>
+                <div class="weather-item" data-weather="windy" onclick="selectWeather(this)">💨</div>
+                <div class="weather-item" data-weather="snowy" onclick="selectWeather(this)">❄️</div>
             </div>
         </div>
 
-        <div class="footer">
-            <h4>✨ made by 새벽숲</h4>
-            <p>Blog: <a href="https://blog.naver.com/forestindawn">blog.naver.com/forestindawn</a></p>
-            <p>💌 문의사항이나 개선 아이디어가 있으시면 블로그 댓글로 남겨주세요!</p>
-            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
-                이 도구가 여러분의 마음 건강에 도움이 되길 바랍니다 💜
-            </p>
+        <div class="section">
+            <div class="section-title">😊 기분 척도 (1-10)</div>
+            <div class="mood-scale">
+                <div class="mood-item" data-mood="1" onclick="selectMood(this)">1</div>
+                <div class="mood-item" data-mood="2" onclick="selectMood(this)">2</div>
+                <div class="mood-item" data-mood="3" onclick="selectMood(this)">3</div>
+                <div class="mood-item" data-mood="4" onclick="selectMood(this)">4</div>
+                <div class="mood-item" data-mood="5" onclick="selectMood(this)">5</div>
+                <div class="mood-item" data-mood="6" onclick="selectMood(this)">6</div>
+                <div class="mood-item" data-mood="7" onclick="selectMood(this)">7</div>
+                <div class="mood-item" data-mood="8" onclick="selectMood(this)">8</div>
+                <div class="mood-item" data-mood="9" onclick="selectMood(this)">9</div>
+                <div class="mood-item" data-mood="10" onclick="selectMood(this)">10</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">⚡ 에너지 레벨 (1-5)</div>
+            <div class="energy-bar">
+                <div class="energy-level" data-energy="1" onclick="selectEnergy(this)"></div>
+                <div class="energy-level" data-energy="2" onclick="selectEnergy(this)"></div>
+                <div class="energy-level" data-energy="3" onclick="selectEnergy(this)"></div>
+                <div class="energy-level" data-energy="4" onclick="selectEnergy(this)"></div>
+                <div class="energy-level" data-energy="5" onclick="selectEnergy(this)"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🌱 자기관리</div>
+            <div class="self-care-grid">
+                <div class="care-item" data-care="exercise" onclick="toggleSelfCare(this)">
+                    <div class="care-checkbox"></div>
+                    <span>운동</span>
+                </div>
+                <div class="care-item" data-care="meditation" onclick="toggleSelfCare(this)">
+                    <div class="care-checkbox"></div>
+                    <span>명상</span>
+                </div>
+                <div class="care-item" data-care="sleep" onclick="toggleSelfCare(this)">
+                    <div class="care-checkbox"></div>
+                    <span>충분한 잠</span>
+                </div>
+                <div class="care-item" data-care="other" onclick="toggleSelfCare(this)">
+                    <div class="care-checkbox"></div>
+                    <span>기타</span>
+                </div>
+            </div>
+            <input type="text" id="otherCare" placeholder="기타 자기관리 활동을 입력하세요..." class="other-input">
+        </div>
+
+        <div class="section">
+            <div class="section-title">📖 감정일기</div>
+            <textarea id="journalText" placeholder="오늘의 감정이나 특별한 일을 자유롭게 적어보세요..." class="journal-input"></textarea>
+        </div>
+
+        <div class="save-section">
+            <button class="save-btn" onclick="saveEntry()">💾 기록 저장하기</button>
+            <button class="report-btn" onclick="downloadMonthlyReport()">📊 월간 리포트</button>
+        </div>
+
+        <div id="saveAlert" class="alert"></div>
+
+        <div class="calendar-section">
+            <div class="calendar-header">
+                <button class="calendar-nav" onclick="previousMonth()">← 이전</button>
+                <h3 id="calendarTitle">2025년 10월</h3>
+                <button class="calendar-nav" onclick="nextMonth()">다음 →</button>
+            </div>
+            <div id="calendar" class="calendar-grid"></div>
+        </div>
+
+        <div class="history-section">
+            <h4>📋 최근 기록</h4>
+            <div id="historyList" class="history-list"></div>
+        </div>
+
+        <div class="credit-section">
+            <div class="credit-content">
+                <div>✨ made by 새벽숲</div>
+                <div>Blog: <a href="https://blog.naver.com/forestindawn" target="_blank">blog.naver.com/forestindawn</a></div>
+            </div>
         </div>
     </div>
 
-    <script>
-        function downloadMoodDiary() {
-            // 실제 파일 경로로 변경해주세요
-            const link = document.createElement('a');
-            link.href = 'mood_diary_by_forestindawn.html'; // 실제 파일 경로
-            link.download = 'mood_diary_by_forestindawn.html';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // 다운로드 완료 알림
-            alert('MOOD DIARY 다운로드가 시작되었습니다! 🎉\n\n다운로드 완료 후 브라우저로 파일을 열어서 사용하세요.');
-        }
-    </script>
+    <!-- 상세 기록 모달 -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <div class="modal-date" id="modalDate"></div>
+            </div>
+            <div id="modalContent">
+                <!-- 상세 내용이 여기에 표시됩니다 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 도움말 모달 -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content help-modal-content">
+            <span class="modal-close" onclick="closeHelpModal()">&times;</span>
+            <div class="modal-header">
+                <div class="modal-date">📖 무드 다이어리 사용설명서</div>
+            </div>
+            <div class="help-content">
+                <div class="help-section">
+                    <h3>🚀 시작하기</h3>
+                    <p>• 상단의 날짜를 선택하여 기록할 날짜를 정하세요<br>
+                    • 각 항목을 클릭하여 오늘의 상태를 기록하세요<br>
+                    • 모든 기록은 여러분의 브라우저에만 안전하게 저장됩니다</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>🌤️ 날씨 기록</h3>
+                    <p>오늘의 날씨를 6가지 중에서 선택하세요:<br>
+                    ☀️ 맑음 | ☁️ 흐림 | ⛅ 구름많음 | 🌧️ 비 | 💨 바람 | ❄️ 눈</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>😊 기분 척도 (1-10)</h3>
+                    <p>• <strong>1-3</strong>: 우울하거나 힘든 상태<br>
+                    • <strong>4-6</strong>: 보통이거나 약간 안 좋은 상태<br>
+                    • <strong>7-8</strong>: 좋은 상태<br>
+                    • <strong>9-10</strong>: 매우 좋고 행복한 상태</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>⚡ 에너지 레벨 (1-5)</h3>
+                    <p>오늘의 체력이나 활력 정도를 선택하세요:<br>
+                    1단계(매우 피곤) → 5단계(에너지 넘침)</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>🌱 자기관리</h3>
+                    <p>• <strong>운동</strong>: 걷기, 헬스, 요가 등<br>
+                    • <strong>명상</strong>: 명상, 심호흡, 마음챙김<br>
+                    • <strong>충분한 잠</strong>: 7-8시간 이상<br>
+                    • <strong>기타</strong>: 다른 자기관리 활동 (직접 입력 가능)</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>📖 감정일기</h3>
+                    <p>오늘의 감정이나 특별한 일을 자유롭게 적어보세요<br>
+                    • 특별한 일이 있었나요?<br>
+                    • 감사한 일이나 아쉬웠던 일을 적어보세요</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>💾 기록 저장하기</h3>
+                    <p>• 모든 항목을 작성한 후 "💾 기록 저장하기" 버튼을 클릭하세요<br>
+                    • 저장이 완료되면 초록색 알림이 나타납니다<br>
+                    • 같은 날짜에 다시 저장하면 기존 기록이 업데이트됩니다</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>📊 월간 리포트</h3>
+                    <p><strong>이번 달 기록을 종합 분석해서 텍스트 파일로 다운로드 받을 수 있어요!</strong><br><br>
+                    <strong>포함 내용:</strong><br>
+                    • 📈 이번 달 요약 (기록일수, 평균 기분/에너지)<br>
+                    • 🏆 자기관리 실천 현황 (운동, 명상, 수면 횟수)<br>
+                    • 🌤️ 날씨별 기분 분석<br>
+                    • 🌟 베스트 기분의 날 (일기 내용 포함)<br>
+                    • 💡 한 달 총평 및 다음 달 목표 제안<br><br>
+                    <strong>사용법:</strong><br>
+                    • "📊 월간 리포트" 버튼 클릭<br>
+                    • 자동으로 텍스트 파일 다운로드<br>
+                    • 이메일에 첨부하거나 개인 기록으로 보관<br>
+                    • 매월 말에 다운로드해서 성장 과정 확인하세요!</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>📅 기록 확인하기</h3>
+                    <p>• <strong>달력</strong>: 월별 기록 한눈에 보기<br>
+                    • <strong>🟡 노란테두리</strong>: 오늘 날짜<br>
+                    • <strong>🟢 초록배경</strong>: 기록이 있는 날<br>
+                    • <strong>😊 이모지</strong>: 그날의 기분<br>
+                    • <strong>작은 점들</strong>: 날씨(파랑), 자기관리(초록), 일기(노랑) 기록 여부<br>
+                    • <strong>날짜 클릭</strong>: 상세 기록 팝업으로 확인</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>📝 기록 수정하기</h3>
+                    <p>• 상단 날짜 입력칸에서 수정하고 싶은 날짜를 선택하세요<br>
+                    • 기존 기록이 자동으로 불러와집니다<br>
+                    • 원하는 부분을 수정한 후 "💾 기록 저장하기"를 클릭하세요</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>💡 활용 팁</h3>
+                    <p><strong>꾸준히 기록하기:</strong><br>
+                    • 매일 같은 시간에 기록하는 습관 만들기 (예: 잠들기 전)<br>
+                    • 간단하게라도 꾸준히 기록하는 것이 중요합니다<br><br>
+                    <strong>패턴 찾기:</strong><br>
+                    • 달력을 보며 기분 좋은 날들의 공통점 찾아보기<br>
+                    • 에너지가 낮은 날과 높은 날의 차이점 분석하기<br>
+                    • 자기관리와 기분의 상관관계 관찰하기<br><br>
+                    <strong>목표 설정:</strong><br>
+                    • "일주일에 운동 3번 하기"<br>
+                    • "매일 충분히 잠자기"<br>
+                    • "기분 점수 평균 7점 이상 유지하기"</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>⚠️ 주의사항</h3>
+                    <p><strong>데이터 백업:</strong><br>
+                    • 브라우저 데이터를 지우면 기록이 사라집니다<br>
+                    • 중요한 기록은 별도로 복사해두시는 것을 권장합니다<br>
+                    • 다른 기기에서는 기록이 보이지 않습니다<br><br>
+                    <strong>브라우저 호환성:</strong><br>
+                    • 최신 버전의 크롬, 사파리, 파이어폭스, 엣지에서 사용 가능<br>
+                    • 인터넷 익스플로러에서는 일부 기능이 작동하지 않을 수 있습니다<br><br>
+                    <strong>개인정보 보호:</strong><br>
+                    • 모든 기록은 본인의 기기에만 저장됩니다<br>
+                    • 인터넷 연결 없이도 사용할 수 있습니다</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>🆘 문제해결</h3>
+                    <p><strong>기록이 저장되지 않을 때:</strong><br>
+                    • 브라우저를 새로고침해보세요<br>
+                    • 다른 브라우저에서 시도해보세요<br>
+                    • 브라우저의 쿠키/로컬스토리지 설정을 확인해보세요<br><br>
+                    <strong>달력이 보이지 않을 때:</strong><br>
+                    • 페이지가 완전히 로드될 때까지 기다려보세요<br>
+                    • 브라우저를 새로고침해보세요<br><br>
+                    <strong>모바일에서 사용할 때:</strong><br>
+                    • 화면을 가로로 돌리면 더 편하게 사용할 수 있습니다<br>
+                    • 터치가 안 될 때는 조금 더 정확히 터치해보세요</p>
+                </div>
+
+                <div class="help-section">
+                    <h3>🌸 마무리</h3>
+                    <p>무드 다이어리는 여러분의 <strong>정신건강과 자기관리</strong>를 도와주는 도구입니다.<br><br>
+                    꾸준히 기록하다 보면:<br>
+                    • 자신의 <strong>감정 패턴</strong>을 이해할 수 있습니다<br>
+                    • <strong>스트레스 요인</strong>을 파악할 수 있습니다<br>
+                    • <strong>기분 좋은 활동들</strong>을 발견할 수 있습니다<br>
+                    • <strong>자기관리 습관</strong>을 만들 수 있습니다<br><br>
+                    작은 기록이 모여 큰 변화를 만들어냅니다! 💜<br><br>
+                    <strong>✨ made by 새벽숲</strong><br>
+                    무드 다이어리를 사용해주셔서 감사합니다! 건강하고 행복한 하루 되세요! 😊</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
