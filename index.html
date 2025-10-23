@@ -3,205 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>무드 다이어리 다운로드 - 나만의 감정 기록 도구</title>
+    <title>MOOD DIARY - 무료 다운로드</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
-        <header class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title">📊 MOOD DIARY</h1>
-                <p class="hero-subtitle">나만의 감정 기록 도구</p>
-                <p class="hero-description">
-                    매일의 기분, 날씨, 에너지 레벨을 기록하고<br>
-                    월간 리포트로 나만의 성장 과정을 확인해보세요
-                </p>
+        <div class="header">
+            <h1>MOOD DIARY</h1>
+            <p>나만의 감정 기록 도구로 마음 건강을 챙기세요</p>
+            <div class="version-badge">✨ 무료 버전 · made by 새벽숲</div>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <h2>매일 5분, 내 마음을 돌보는 시간</h2>
+                <p>MOOD DIARY는 당신의 감정과 기분을 쉽고 재미있게 기록할 수 있는 웹 도구입니다. 
+                복잡한 설치 없이 브라우저에서 바로 사용하고, 모든 기록은 안전하게 보관됩니다.</p>
             </div>
-        </header>
 
-        <main class="main-content">
-            <section class="features-section">
-                <h2 class="section-title">✨ 주요 기능</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🌤️</div>
-                        <h3>날씨 & 기분 기록</h3>
-                        <p>날씨와 기분 척도(1-10)를 쉽게 기록하고 패턴을 발견하세요</p>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>📊 종합적인 기분 기록</h3>
+                    <p>하루의 감정을 다각도로 기록하세요</p>
+                    <ul class="feature-list">
+                        <li>오늘의 날씨와 기분 척도</li>
+                        <li>에너지 레벨 측정</li>
+                        <li>자기관리 체크리스트</li>
+                        <li>자유로운 감정 일기</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📅 직관적인 달력 뷰</h3>
+                    <p>한 달간의 감정 변화를 한눈에 확인</p>
+                    <ul class="feature-list">
+                        <li>월별 기록 달력으로 보기</li>
+                        <li>날짜별 기분 이모지 표시</li>
+                        <li>클릭 한 번으로 상세 기록 확인</li>
+                        <li>감정 패턴 쉽게 파악</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📈 월간 리포트 생성</h3>
+                    <p>내 감정 데이터를 분석한 맞춤 리포트</p>
+                    <ul class="feature-list">
+                        <li>월별 기분/에너지 평균 분석</li>
+                        <li>자기관리 실천 현황</li>
+                        <li>베스트 기분의 날 하이라이트</li>
+                        <li>이미지 또는 텍스트로 다운로드</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔒 안전한 개인정보 보호</h3>
+                    <p>내 기록은 오직 나만 볼 수 있어요</p>
+                    <ul class="feature-list">
+                        <li>모든 데이터 로컬 저장</li>
+                        <li>인터넷 없이도 사용 가능</li>
+                        <li>별도 회원가입 불필요</li>
+                        <li>개인정보 외부 전송 없음</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <h3>🚀 지금 바로 시작하세요!</h3>
+                <p>설치가 필요 없는 웹 버전으로 언제 어디서나 사용할 수 있어요</p>
+                
+                <a href="#" class="download-btn" onclick="downloadMoodDiary()">
+                    💾 MOOD DIARY 다운로드
+                </a>
+
+                <div class="download-info">
+                    <div class="info-card">
+                        <h4>📱 사용 환경</h4>
+                        <p>PC, 모바일, 태블릿 모든 기기에서 사용 가능<br>
+                        최신 브라우저 권장 (Chrome, Safari, Firefox)</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>에너지 레벨 추적</h3>
-                        <p>매일의 에너지 수준을 시각적으로 기록하고 관리하세요</p>
+                    <div class="info-card">
+                        <h4>💾 파일 정보</h4>
+                        <p>HTML 파일 1개 (약 50KB)<br>
+                        다운로드 후 브라우저로 열어서 사용</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🌱</div>
-                        <h3>자기관리 체크</h3>
-                        <p>운동, 명상, 수면 등 자기관리 활동을 체크하고 습관을 만들어가세요</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📖</div>
-                        <h3>감정 일기</h3>
-                        <p>하루의 특별한 순간들을 자유롭게 기록해보세요</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📅</div>
-                        <h3>달력 뷰</h3>
-                        <p>월별 기록을 한눈에 보고 나의 감정 패턴을 파악하세요</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📊</div>
-                        <h3>월간 리포트</h3>
-                        <p>한 달간의 기록을 분석한 개인 맞춤 리포트를 다운로드하세요</p>
+                    <div class="info-card">
+                        <h4>🔄 업데이트</h4>
+                        <p>새로운 기능이 추가되면 블로그에서 공지<br>
+                        기존 데이터는 그대로 유지</p>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section class="download-section">
-                <h2 class="section-title">💾 다운로드</h2>
-                <div class="download-options">
-                    <div class="download-card main-download">
-                        <div class="download-header">
-                            <h3>🎯 무드 다이어리 완전판</h3>
-                            <p>모든 기능이 포함된 완전한 버전</p>
-                        </div>
-                        <div class="download-details">
-                            <div class="file-list">
-                                <div class="file-item">
-                                    <span class="file-icon">📄</span>
-                                    <span class="file-name">index.html</span>
-                                    <span class="file-desc">메인 페이지</span>
-                                </div>
-                                <div class="file-item">
-                                    <span class="file-icon">🎨</span>
-                                    <span class="file-name">css/style.css</span>
-                                    <span class="file-desc">스타일시트</span>
-                                </div>
-                                <div class="file-item">
-                                    <span class="file-icon">⚙️</span>
-                                    <span class="file-name">js/script.js</span>
-                                    <span class="file-desc">기능 스크립트</span>
-                                </div>
-                            </div>
-                            <div class="download-buttons">
-                                <button class="download-btn primary" onclick="downloadAllFiles()">
-                                    📦 전체 파일 다운로드
-                                </button>
-                                <button class="download-btn secondary" onclick="downloadZip()">
-                                    🗜️ ZIP 파일로 다운로드
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="individual-downloads">
-                        <h4>개별 파일 다운로드</h4>
-                        <div class="individual-files">
-                            <button class="file-download-btn" onclick="downloadFile('html')">
-                                <span class="file-icon">📄</span>
-                                <span class="file-info">
-                                    <strong>HTML 파일</strong>
-                                    <small>메인 구조 파일</small>
-                                </span>
-                                <span class="download-icon">⬇️</span>
-                            </button>
-                            <button class="file-download-btn" onclick="downloadFile('css')">
-                                <span class="file-icon">🎨</span>
-                                <span class="file-info">
-                                    <strong>CSS 파일</strong>
-                                    <small>디자인 스타일시트</small>
-                                </span>
-                                <span class="download-icon">⬇️</span>
-                            </button>
-                            <button class="file-download-btn" onclick="downloadFile('js')">
-                                <span class="file-icon">⚙️</span>
-                                <span class="file-info">
-                                    <strong>JavaScript 파일</strong>
-                                    <small>기능 스크립트</small>
-                                </span>
-                                <span class="download-icon">⬇️</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="usage-section">
-                <h2 class="section-title">🚀 사용 방법</h2>
+            <div class="usage-section">
+                <h3>📖 사용법</h3>
                 <div class="usage-steps">
                     <div class="step">
                         <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>파일 다운로드</h3>
-                            <p>위의 다운로드 버튼을 클릭하여 모든 파일을 받으세요</p>
-                        </div>
+                        <h4>다운로드</h4>
+                        <p>위의 다운로드 버튼을 클릭하여 HTML 파일을 받으세요</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>폴더 구조 유지</h3>
-                            <p>다운로드한 파일들을 같은 폴더에 놓고 구조를 유지하세요</p>
-                            <div class="folder-structure">
-                                📁 mood-diary/<br>
-                                ├── 📄 index.html<br>
-                                ├── 📁 css/<br>
-                                │   └── 🎨 style.css<br>
-                                └── 📁 js/<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;└── ⚙️ script.js
-                            </div>
-                        </div>
+                        <h4>실행</h4>
+                        <p>다운로드한 파일을 브라우저로 열어주세요</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>index.html 실행</h3>
-                            <p>브라우저에서 index.html 파일을 열어서 사용하세요</p>
-                        </div>
+                        <h4>기록</h4>
+                        <p>날씨, 기분, 에너지, 자기관리를 선택하고 일기를 써보세요</p>
                     </div>
-                </div>
-            </section>
-
-            <section class="info-section">
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3>🔒 개인정보 보호</h3>
-                        <p>모든 데이터는 사용자의 브라우저에만 저장되며, 외부로 전송되지 않습니다</p>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>분석</h4>
+                        <p>달력에서 기록을 확인하고 월간 리포트를 받아보세요</p>
                     </div>
-                    <div class="info-card">
-                        <h3>📱 반응형 디자인</h3>
-                        <p>PC, 태블릿, 모바일 모든 기기에서 최적화된 환경을 제공합니다</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>🆓 완전 무료</h3>
-                        <p>다운로드부터 사용까지 모든 기능이 완전히 무료입니다</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>🔄 오프라인 사용</h3>
-                        <p>인터넷 연결 없이도 언제 어디서나 사용할 수 있습니다</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>✨ made by 새벽숲</h3>
-                    <p>Blog: <a href="https://blog.naver.com/forestindawn" target="_blank">blog.naver.com/forestindawn</a></p>
-                </div>
-                <div class="footer-links">
-                    <a href="#" class="footer-link">사용 가이드</a>
-                    <a href="#" class="footer-link">문의하기</a>
-                    <a href="#" class="footer-link">업데이트</a>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
 
-    <!-- 다운로드 알림 -->
-    <div id="downloadAlert" class="alert">
-        <div class="alert-content">
-            <span class="alert-icon">✅</span>
-            <span class="alert-message">파일이 다운로드되었습니다!</span>
+        <div class="footer">
+            <h4>✨ made by 새벽숲</h4>
+            <p>Blog: <a href="https://blog.naver.com/forestindawn">blog.naver.com/forestindawn</a></p>
+            <p>💌 문의사항이나 개선 아이디어가 있으시면 블로그 댓글로 남겨주세요!</p>
+            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
+                이 도구가 여러분의 마음 건강에 도움이 되길 바랍니다 💜
+            </p>
         </div>
     </div>
 
